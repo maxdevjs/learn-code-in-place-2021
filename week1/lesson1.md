@@ -5,6 +5,7 @@
 <br />
 
 By the end of class you should know about Code in Place. You should also know basic Karel commands. The Karel material is review from the concepts that you used in the application -- this gives you a chance to get used to the course structure in a gentle way. Learn about the art of writing beautiful programs.
+</details>
 
  ## Videos
 
@@ -756,5 +757,3 @@ if __name__ == "__main__":
 - [ ] [Programming Karel](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter2.html)
 - [ ] [New Functions](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter3.html)
 - [ ] [Decomposition](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter4.html)
-
-</details>
