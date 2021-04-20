@@ -678,15 +678,276 @@ You can toggle between worlds by changing `Midpoint.w` in the last line of the f
 <details>
 <summary>Code</summary>
 
-``
+<details>
+<summary>Python File</summary>
+
+`Midpoint.py`
 ```python
+from karel.stanfordkarel import *
 
+"""
+File: Midpoint.py
+------------------------
+Place a beeper on the middle of the first row.
+"""
+
+def main():
+    """
+    Your code here
+    """
+    # 1 BLACK
+    paint_corner(BLACK)
+    if front_is_blocked():
+        put_beeper()
+        paint_corner(BLANK)
+
+    # 2 BLUE
+    move()
+    paint_corner(BLUE)
+    if front_is_blocked():
+        put_beeper()
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            paint_corner(BLANK)
+
+    # 3 CYAN
+    move()
+    paint_corner(CYAN)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(BLUE):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 4 DARK_GRAY
+    move()
+    paint_corner(DARK_GRAY)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(CYAN):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 5 GRAY
+    move()
+    paint_corner(GRAY)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(GRAY):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 6 GREEN
+    move()
+    paint_corner(GREEN)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(CYAN):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 7 LIGHT_GRAY
+    move()
+    paint_corner(LIGHT_GRAY)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(DARK_GRAY):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 8 MAGENTA
+    move()
+    paint_corner(MAGENTA)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(GRAY):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 9 ORANGE
+    move()
+    paint_corner(ORANGE)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(GRAY):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 10 PINK
+    move()
+    paint_corner(PINK)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(GREEN):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 11 RED
+    move()
+    paint_corner(RED)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(GREEN):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 12 WHITE
+    move()
+    paint_corner(WHITE)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(LIGHT_GRAY):
+                put_beeper()
+            paint_corner(BLANK)
+
+    # 13 YELLOW
+    move()
+    paint_corner(YELLOW)
+    if front_is_blocked():
+        paint_corner(BLANK)
+        turn_around()
+        while front_is_clear():
+            move()
+            if corner_color_is(LIGHT_GRAY):
+                put_beeper()
+            paint_corner(BLANK)
+
+def turn_around():
+   turn_left()
+   turn_left()
+
+if __name__ == '__main__':
+    run_karel_program('Midpoint3.w')
 ```
+</details>
+<details>
+<summary>Midpoint Files</summary>
 
-``
+`Midpoint1.w`
 ```yaml
-
+Dimension: (1, 1)
+BeeperBag: INFINITY
+Karel: (1, 1); East
+Speed: 0.75
 ```
+
+`Midpoint2.w`
+```yaml
+Dimension: (2, 2)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint3.w`
+```yaml
+Dimension: (3, 2)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint4.w`
+```yaml
+Dimension: (4, 2)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint5.w`
+```yaml
+Dimension: (5, 10)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint6.w`
+```yaml
+Dimension: (6, 10)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint7.w`
+```yaml
+Dimension: (7, 10)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint8.w`
+```yaml
+Dimension: (8, 10)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint.w`
+```yaml
+Dimension: (9, 9)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint10.w`
+```yaml
+Dimension: (10, 10)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint11.w`
+```yaml
+Dimension: (11, 10)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint12.w`
+```yaml
+Dimension: (12, 10)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+`Midpoint13.w`
+```yaml
+Dimension: (13, 10)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+</details>
 
 </details>
 </details>
