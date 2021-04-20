@@ -40,8 +40,6 @@ To reiterate, you should write the sequence of commands so that Karel will:
 
 Although the program does not have many lines of code, it is still worth getting some practice with decomposition. In your solution, include a function for each of the three steps shown in the outline above.
 </details>
-
-<br />
 <details>
 <summary>Code</summary>
 
@@ -150,7 +148,7 @@ BeeperBag: 0
 </details>
 </details>
 
-<br />
+<hr />
 <details>
 <summary>Q2: Year 2021</summary>
 <details open>
@@ -163,7 +161,6 @@ Congratulations on beginning your coding journey! Karel welcomes you to Code in 
 
 Happy coding!
 </details>
-<br />
 <details>
 <summary>Code</summary>
 
@@ -208,7 +205,9 @@ BeeperBag: INFINITY
 ```
 </details>
 </details>
-<br />
+
+<hr />
+
 <details>
 <summary>Q3: Cleanup Karel, Milestone 1</summary>
 
@@ -220,8 +219,6 @@ Two worlds are provided for your to test your code on -- on the world where Kare
 
 We've provided you two 1x1 worlds (one with a beeper, one without) on which to test your code. You can toggle from the beeper-present world to the no-beeper world by changing the very last line in the file from run_karel_program('SafePickup1.w') to run_karel_program('SafePickup2.w') (and vice versa).
 </details>
-
-<br />
 <details>
 <summary>Code</summary>
 
@@ -270,7 +267,7 @@ Speed: 0.75
 </details>
 </details>
 
-<br />
+<hr />
 <details>
 <summary>Q4: Cleanup Karel, Milestone 2</summary>
 <details open>
@@ -293,8 +290,6 @@ This should be the end result, with a clear bottom row:
 
 We've provided you two worlds on which to test your code. You can toggle between them by changing the very last line in the file from run_karel_program('Cleanup1.w') to run_karel_program('Cleanup2.w') (and vice versa) -- you will likely need to press Run (it's fine if you do so without any code written) for the world change to take effect.
 </details>
-
-<br />
 <details>
 <summary>Code</summary>
 
@@ -350,7 +345,7 @@ BeeperBag: 0
 </details>
 </details>
 
-<br />
+<hr />
 <details>
 <summary>Q5: Ramp Climbing Karel</summary>
 <details open>
@@ -373,8 +368,6 @@ You should assume
 
 We've provided you three worlds on which to test your code. You can toggle between them by changing the very last line in the file from run_karel_program('RampKarel1.w') to run_karel_program('RampKarel2.w') or run_karel_program('RampKarel3.w') -- you will likely need to press Run (it's fine if you do so without any code written) for the world change to take effect. RampKarel1 is a 7x7 world, RampKarel2 is a 3x3 world, and RampKarel3 is a 25x25 world.
 </details>
-
-<br />
 <details>
 <summary>Code</summary>
 
@@ -440,7 +433,7 @@ BeeperBag: INFINITY
 </details>
 </details>
 
-<br />
+<hr />
 <details>
 <summary>Q6: Stone Mason Karel</summary>
 <details open>
@@ -471,8 +464,6 @@ Karel’s final location and the final direction Karel is facing at the end of t
 - In an initial world, some columns may already contain beepers representing stones that are still in place. Your program should not put a second beeper on corners that already have beepers. Avenues that will not have columns will never contain existing beepers
 
 </details>
-
-<br />
 <details>
 <summary>Code</summary>
 
@@ -647,7 +638,7 @@ BeeperBag: INFINITY
 </details>
 </details>
 
-<br />
+<hr />
 <details>
 <summary>Q7: Midpoint (optional!)</summary>
 <details open>
@@ -683,8 +674,6 @@ You should make sure your program runs successfully in all of the following worl
 
 You can toggle between worlds by changing `Midpoint.w` in the last line of the file (which is currently `run_karel_program`('Midpoint.w') to the filename of your choice (make sure to include the quotation marks around the filename) and running your program.
 </details>
-
-<br />
 <details>
 <summary>Code</summary>
 
@@ -701,15 +690,13 @@ You can toggle between worlds by changing `Midpoint.w` in the last line of the f
 </details>
 </details>
 
-<br />
+<hr />
 <details>
 <summary>Extension (optional!)</summary>
 <details open>
 <summary>Description</summary>
 If you finish early, you may optionally write a Karel project of your own choice. Modify this file to use Karel to complete any task of your choosing! Extensions are a great chance for practice and to be creative. Make sure to write comments to explain what your program is doing and update the world to be appropriate for your program. (Notice that you can toggle the rows and columns of Karel's world, and if you right click Karel's world, you'll see a dropdown of other things you can do by clicking!)
 </details>
-
-<br />
 <details>
 <summary>Code</summary>
 
