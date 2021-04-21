@@ -370,7 +370,7 @@ BeeperBag: 0
 
 <hr />
 <details>
-<summary>Q5: Ramp Climbing Karel</summary>
+<summary>Q5: Ramp Climbing Karel - Spoiler: Tests failed like 🦾😳😂 here too</summary>
 <details open>
 <summary>Description</summary>
 Write a program that has Karel draw a diagonal line across the world, with a slope of ½, like so:
@@ -435,6 +435,34 @@ def double_move():
 if __name__ == '__main__':
     run_karel_program('RampKarel1.w')
 ```
+
+Not too surprisingly, this code had a hiccup too.
+
+At first, the returned message looked a bit cryptic:
+
+```text
+Test failed!
+
+BEEPERS: (7, 4) had 0, expected 1
+```
+
+🤔
+
+Checking better, I forgot to put the last `beeper`:
+
+<img src="imgs/Q5-failed.png">
+
+Let's fix that:
+
+`RampClimbingKarel.py`
+```python
+def main():
+    while front_is_clear():
+        pump_up_the_volume()
+    put_beeper()
+```
+
+✅
 
 `RampKarel1.w`
 ```yaml
