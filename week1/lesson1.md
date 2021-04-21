@@ -270,7 +270,7 @@ Speed: 0.75
 
 <hr />
 <details>
-<summary>Q4: Cleanup Karel, Milestone 2</summary>
+<summary>Q4: Cleanup Karel, Milestone 2 - Spoiler: Tests failed like 🦾😀😂</summary>
 <details open>
 <summary>Description</summary>
 Karel has a bit of spring cleaning to do! Karel's world will have beepers in some positions in the bottom row; write a program to have Karel walk across the bottom row and, at each position, pick up a beeper only if one is present. Notice that you've already written the code to check if a beeper is present and only pick up a beeper if one is there from the previous milestone -- you should use your code from the previous milestone as a helper function to help with the decomposition of this problem!
@@ -294,7 +294,7 @@ We've provided you two worlds on which to test your code. You can toggle between
 <details>
 <summary>Code</summary>
 
-``
+`CleanupKarel.py`
 ```python
 from karel.stanfordkarel import *
 
@@ -331,6 +331,28 @@ Beeper: (4, 1); 1
 Beeper: (5, 1); 1
 Karel: (1, 1); east
 BeeperBag: 0
+```
+
+This code executed with no
+evident drawback, but at submit time, it exploded 🦾😍:
+
+```text
+Test failed!
+	Student program crashed with this error:
+	File "/home/CleanupKarel.py", line 19, in main
+	    if front_is_clear():
+	KarelInfiniteException: Executed more than 20000 commands - Karel might be stuck in an infinite loop!
+```
+
+After a "little" logic improvement, it passed the tests:
+
+`CleanupKarel.py`
+```python
+while front_is_clear():
+        move()
+        if beepers_present():
+            while beepers_present():
+                pick_beeper()
 ```
 
 `Cleanup2.w`
