@@ -518,6 +518,8 @@ Karel’s final location and the final direction Karel is facing at the end of t
 <details>
 <summary>Code</summary>
 
+To my sadness, this passed the tests with no problems 🙀😁
+
 `StoneMasonKarel.py`
 ```python
 from karel.stanfordkarel import *
@@ -691,7 +693,7 @@ BeeperBag: INFINITY
 
 <hr />
 <details>
-<summary>Q7: Midpoint (optional!)</summary>
+<summary>Q7: Midpoint (optional!) 💣</summary>
 <details open>
 <summary>Description</summary>
 As an exercise in solving algorithmic problems, program Karel to place a single beeper at the middle of 1st Street (aka Row). For example, say Karel starts in the 5x5 world pictured in the figure:
@@ -730,6 +732,8 @@ You can toggle between worlds by changing `Midpoint.w` in the last line of the f
 
 <details>
 <summary>Python File</summary>
+
+Annnnd now... the most awaited case 🥁
 
 `Midpoint.py`
 ```python
@@ -901,6 +905,20 @@ def turn_around():
 if __name__ == '__main__':
     run_karel_program('Midpoint3.w')
 ```
+
+<b>YES!</b>. This failed.
+
+```text
+Test failed!
+	Student program crashed with this error:
+	File "/home/Midpoint.py", line 115, in main
+	    move()
+	KarelCrashException: Karel crashed while on avenue 1 and street 1, facing West
+	Invalid action: Karel attempted to move, but its front was blocked.
+```
+
+NOTE: will come back to this later!
+
 </details>
 <details>
 <summary>Midpoint Files</summary>
