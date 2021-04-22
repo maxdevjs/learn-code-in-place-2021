@@ -473,6 +473,105 @@ BeeperBag: INFINITY
 
 <hr />
 <details>
+<summary>Labyrinth (while loops, if/else)</summary>
+<details open>
+<summary>Description</summary>
+Solve the [maze](https://en.wikipedia.org/wiki/Labyrinth).
+<br />
+<img width="600px" src="" />
+<br />
+
+</details>
+<details>
+<summary>Code</summary>
+
+`LabyrinthKarel.py`
+```python
+from karel.stanfordkarel import *
+
+"""
+File: LabyrinthKarel.py
+------------------------------
+Karel solves labyrinths!
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    reach_the_finish_line()
+
+def reach_the_finish_line():
+    while front_is_clear():
+        move()
+        find_the_direction()
+
+def find_the_direction():
+    if left_is_clear():
+            turn_left()
+    if right_is_clear():
+        turn_right()
+
+def find_the_wall():
+    while front_is_clear():
+        move()
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+
+if __name__ == "__main__":
+    run_karel_program('Labyrinth1')
+```
+
+`Labyrinth1.w`
+```yaml
+Dimension: (5, 4)
+Wall: (1, 2); east
+Wall: (1, 3); east
+Wall: (4, 1); north
+Wall: (5, 2); north
+Wall: (4, 4); south
+Wall: (4, 3); south
+Wall: (2, 3); north
+Wall: (2, 1); east
+Wall: (3, 3); north
+Wall: (3, 2); south
+Wall: (2, 2); east
+Wall: (4, 3); west
+Beeper: (2, 1); 0
+Karel: (3, 1); east
+BeeperBag: 0
+```
+
+`Labyrinth2.w`
+```yaml
+Dimension: (5, 4)
+Wall: (1, 1); north
+Wall: (5, 3); south
+Wall: (3, 3); east
+Wall: (2, 4); south
+Wall: (3, 2); west
+Wall: (4, 4); south
+Wall: (4, 2); south
+Wall: (3, 2); east
+Wall: (1, 4); south
+Wall: (2, 1); east
+Wall: (3, 3); north
+Wall: (2, 3); south
+Beeper: (2, 1); 0
+Karel: (1, 1); east
+BeeperBag: 0
+```
+
+</details>
+</details>
+
+<hr />
+<details>
 <summary>bla</summary>
 <details open>
 <summary>Description</summary>
