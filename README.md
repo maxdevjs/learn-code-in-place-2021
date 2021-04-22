@@ -10,6 +10,7 @@ This is the repository for my journey through
 
 #### Week 1
 - [ ] [Lesson 1: Welcome to Karel April 19th](week1/lesson1.md)
+- [ ] [Lesson 2: Control Flow April 21st](week1/lesson2.md)
 
 ### Resources
 
