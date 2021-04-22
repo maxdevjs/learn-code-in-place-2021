@@ -648,25 +648,96 @@ Karel: (1, 1); east
 
 <hr />
 <details>
-<summary>bla</summary>
+<summary>Treasure hunt, part 2 (while loops, if/else)</summary>
 <details open>
 <summary>Description</summary>
 
 <br />
 <img width="600px" src="" />
 <br />
-
+Similarly to the previous map, Karel should move until she encounters a beeper. When Karel encounters a beeper, she should turn left if her left side is clear (no walls present), but if there is a wall in the way she should turn right, and then move forward until another beeper, etc. until the final pile of 10 beepers!
 </details>
 <details>
 <summary>Code</summary>
 
-``
+`TreasureHunt2.py`
 ```python
+from karel.stanfordkarel import *
 
+"""
+File: TreasureHunt2.py
+------------------------------
+Karel will move forward until a beeper.
+At every beeper, Karel will turn left and move until the next beeper, until Karel is standing on the treasure, which is a pile of 10 beepers.
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    find_beepers()
+
+# FIX: end up where the pile of 10 beepers is
+
+def find_beepers():
+    while no_beepers_present():
+        move()
+    # if beepers_present():
+    #     if left_is_clear():
+    #         turn_left()
+    #     else:
+    #         turn_right()
+    #     while beepers_present():
+    #         pick_beeper()
+    # find_beepers()
+
+    if beepers_present():
+        if left_is_clear():
+            turn_left()
+        else:
+            turn_right()
+        pick_beeper()
+        if beepers_present():
+            while beepers_present():
+                pick_beeper()
+        else:
+            move()
+            find_beepers()
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+
+if __name__ == "__main__":
+    run_karel_program()
 ```
 
-``
+`TreasureHunt2.w`
 ```yaml
+Dimension: (7, 7)
+Wall: (6, 5); south
+Wall: (2, 6); east
+Beeper: (6, 1); 0
+Beeper: (5, 1); 0
+Beeper: (5, 6); 0
+Beeper: (1, 6); 0
+Beeper: (1, 5); 0
+Beeper: (7, 5); 0
+Beeper: (7, 7); 0
+Beeper: (3, 7); 0
+Beeper: (3, 3); 0
+Beeper: (3, 1); 1
+Beeper: (6, 2); 10
+Beeper: (6, 4); 1
+Beeper: (2, 4); 1
+Beeper: (3, 6); 1
+Beeper: (2, 7); 1
+Beeper: (6, 7); 1
+Beeper: (6, 6); 1
+Karel: (1, 1); east
 
 ```
 
