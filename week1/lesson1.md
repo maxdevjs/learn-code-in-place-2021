@@ -155,7 +155,12 @@ BeeperBag: 0
 
  ## Optonal Related Reading
 
-- [ ] [Intro to Karel](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter1.html)
-- [ ] [Programming Karel](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter2.html)
-- [ ] [New Functions](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter3.html)
-- [ ] [Decomposition](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter4.html)
+- [x] [Intro
+        pick_beeper()
+        turn_left() to Karel](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter1.html)
+- [x] [Programming Karel](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter2.html)
+- [x] [New Functions](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter3.html)
+- [x] [Decomposition](https://compedu.stanford.edu/karel-reader/docs/python/en/chapter4.html)
+
+- [ ] [Python (programming language)](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [ ] [Programming language](https://en.wikipedia.org/wiki/Programming_language)
