@@ -325,7 +325,155 @@ BeeperBag: INFINITY
 
 <hr />
 <details>
-<summary></summary>
+<summary>Upstairs, downstairs (for/while loops)</summary>
+<details open>
+<summary>Description</summary>
+Go upstairs and downstairs.
+<br />
+<img width="600px" src="" />
+<br />
+
+</details>
+<details>
+<summary>Code</summary>
+
+`UpstairsDownstairs.py`
+```python
+from karel.stanfordkarel import *
+
+"""
+File: UpstairsDownstairs.py
+------------------------------
+Karel will climb three stair steps up and then three stair steps down.
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    while front_is_blocked():
+        step_up()
+
+    while front_is_clear():
+        step_down()
+
+def step_up():
+    if front_is_blocked():
+        turn_left()
+        move()
+        turn_right()
+        move()
+
+def step_down():
+    if front_is_clear():
+        move()
+        turn_right()
+        move()
+        turn_left()
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+
+if __name__ == "__main__":
+    run_karel_program('UpstairsDownstairs.w')
+```
+
+`UpstairsDownstairs.w`
+```yaml
+Dimension: (7, 4)
+Wall: (3, 2); north
+Wall: (5, 3); south
+Wall: (2, 1); north
+Wall: (3, 3); east
+Wall: (6, 1); east
+Wall: (5, 3); west
+Wall: (2, 1); west
+Wall: (2, 2); east
+Wall: (4, 3); north
+Wall: (6, 2); south
+Wall: (6, 2); west
+Karel: (1, 1); east
+BeeperBag: 0
+```
+
+</details>
+</details>
+
+<hr />
+<details>
+<summary>Zig zag (while loops, optional if/else)</summary>
+<details open>
+<summary>Description</summary>
+Karel should place a zig zag pattern of beepers such that all odd columns have beepers in row 1 and all even columns have beepers in row 2.
+<br />
+<img width="600px" src="" />
+<br />
+
+</details>
+<details>
+<summary>Code</summary>
+
+`ZigZagKarel.py`
+```python
+from karel.stanfordkarel import *
+
+"""
+File: ZigZagKarel.py
+-----------------------
+Places a zig zag pattern of beepers in the world.
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    while front_is_clear():
+        put_beeper()
+        double_move()
+    turn_left()
+    move()
+    turn_left()
+    while front_is_clear():
+        put_beeper()
+        double_move()
+
+def double_move():
+    if front_is_clear():
+        move()
+    if front_is_clear():
+        move()
+
+if __name__ == "__main__":
+    run_karel_program('ZigZag1.w')
+```
+
+`ZigZag1.w`
+```yaml
+Dimension: (6, 2)
+Karel: (1, 1);
+BeeperBag: INFINITY
+```
+
+`ZigZag2.w`
+```yaml
+Dimension: (3, 2)
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
+
+</details>
+</details>
+
+<hr />
+<details>
+<summary>bla</summary>
 <details open>
 <summary>Description</summary>
 
