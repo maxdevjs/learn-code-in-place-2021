@@ -477,6 +477,10 @@ BeeperBag: INFINITY
 <details open>
 <summary>Description</summary>
 Solve the [maze](https://en.wikipedia.org/wiki/Labyrinth).
+
+FIX: How am I supposed to count the beepers and then stop on the bigger pile?
+
+Found: check Treasure hunt, part 1 (while loops)
 <br />
 <img width="600px" src="" />
 <br />
@@ -565,6 +569,105 @@ Wall: (2, 3); south
 Beeper: (2, 1); 0
 Karel: (1, 1); east
 BeeperBag: 0
+```
+
+</details>
+</details>
+
+<hr />
+<details>
+<summary>Treasure hunt, part 1 (while loops)</summary>
+<details open>
+<summary>Description</summary>
+Because the treasure is meant for Karel only, Karel should pick up all the beepers she encounters as she moves along, including the final pile of 10. Karel should end up where the pile of 10 beepers is.
+<br />
+<img width="600px" src="" />
+<br />
+
+</details>
+<details>
+<summary>Code</summary>
+
+`TreasureHunt1.py`
+```python
+from karel.stanfordkarel import *
+
+"""
+File: TreasureHunt1.py
+------------------------------
+Karel will move forward until a beeper.
+At every beeper, Karel will turn left and move until the next beeper, until Karel is standing on the treasure, which is a pile of 10 beepers.
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    move_to_beeper()
+
+# FIX: end up where the pile of 10 beepers is
+
+def move_to_beeper():
+    while no_beepers_present():
+        move()
+    if beepers_present():
+        turn_left()
+        pick_beeper()
+        if beepers_present():
+            while beepers_present():
+                pick_beeper()
+        else:
+            move()
+            move_to_beeper()
+
+if __name__ == "__main__":
+    run_karel_program('TreasureHunt1.w')
+```
+
+`TreasureHunt1.w`
+```yaml
+Dimension: (7, 7)
+Beeper: (6, 1); 0
+Beeper: (5, 1); 1
+Beeper: (5, 6); 1
+Beeper: (1, 6); 1
+Beeper: (1, 5); 1
+Beeper: (7, 5); 1
+Beeper: (7, 7); 1
+Beeper: (3, 7); 1
+Beeper: (3, 3); 10
+Karel: (1, 1); east
+
+```
+
+</details>
+</details>
+
+<hr />
+<details>
+<summary>bla</summary>
+<details open>
+<summary>Description</summary>
+
+<br />
+<img width="600px" src="" />
+<br />
+
+</details>
+<details>
+<summary>Code</summary>
+
+``
+```python
+
+```
+
+``
+```yaml
+
 ```
 
 </details>
