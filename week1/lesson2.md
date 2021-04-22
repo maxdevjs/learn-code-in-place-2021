@@ -217,6 +217,139 @@ BeeperBag: INFINITY
 
 <hr />
 <details>
+<summary>10s across the board (for loops, while loops, fencepost)</summary>
+<details open>
+<summary>Description</summary>
+Place 10 beepers in each position in the bottom row.
+<br />
+<img width="600px" src="" />
+<br />
+
+</details>
+<details>
+<summary>Code</summary>
+
+`TensKarel.py`
+```python
+from karel.stanfordkarel import *
+
+"""
+File: TensKarel.py
+-----------------------
+Place 10 beepers in all spots on the bottom row of any sized world.
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    while front_is_clear():
+        put_beepers()
+        move()
+    put_beepers()
+
+def put_beepers():
+    for i in range(10):
+        put_beeper()
+
+if __name__ == "__main__":
+    run_karel_program()
+```
+
+`TensKarel.w`
+```yaml
+custom 7 x 2
+```
+
+</details>
+</details>
+
+
+<hr />
+<details>
+<summary>Maximum 5 (for loops, if/else)</summary>
+<details open>
+<summary>Description</summary>
+Karel should place a maximum of 5 beepers across the first row of the world. If the world is less than 5 columns wide,
+<br />
+<img width="600px" src="" />
+<br />
+
+</details>
+<details>
+<summary>Code</summary>
+
+`Max5Karel.py`
+```python
+from karel.stanfordkarel import *
+
+"""
+File: Max5Karel.py
+------------------------------
+Karel should place 5 beepers in the bottommost row of the world if the world is more than 5 columns wide.
+If the world is less than 5 columns wide, Karel should fill the bottommmost row with beepers and not walk through any walls.
+"""
+
+def main():
+    """
+    You should write your code to make Karel do its task in
+    this function. Make sure to delete the 'pass' line before
+    starting to write your own code. You should also delete this
+    comment and replace it with a better, more descriptive one.
+    """
+    if front_is_blocked():
+        put_beeper()
+    else:
+        for i in range(5):
+            put_beeper()
+            if front_is_clear():
+                move()
+
+
+if __name__ == "__main__":
+    # run_karel_program()
+    run_karel_program('Max5Karel3')
+```
+
+`Max5Karel1.w`
+```yaml
+Dimension: (7, 2)
+BeeperBag: INFINITY
+```
+
+`Max5Karel2.w`
+```yaml
+Dimension: (4, 2)
+BeeperBag: INFINITY
+```
+
+`Max5Karel3.w`
+```yaml
+Dimension: (1, 2)
+BeeperBag: INFINITY
+```
+
+`Max5Karel4.w`
+```yaml
+Dimension: (5, 2)
+BeeperBag: INFINITY
+```
+
+`Max5Karel25.w`
+```yaml
+Dimension: (25, 2)
+BeeperBag: INFINITY
+```
+
+</details>
+</details>
+
+
+<hr />
+<details>
 <summary>Five corridors (for loops, while loops, fencepost, if/else)</summary>
 <details open>
 <summary>Description</summary>
@@ -478,9 +611,6 @@ BeeperBag: INFINITY
 <summary>Description</summary>
 Solve the [maze](https://en.wikipedia.org/wiki/Labyrinth).
 
-FIX: How am I supposed to count the beepers and then stop on the bigger pile?
-
-Found: check Treasure hunt, part 1 (while loops)
 <br />
 <img width="600px" src="" />
 <br />
@@ -679,8 +809,6 @@ def main():
     comment and replace it with a better, more descriptive one.
     """
     find_beepers()
-
-# FIX: end up where the pile of 10 beepers is
 
 def find_beepers():
     while no_beepers_present():
