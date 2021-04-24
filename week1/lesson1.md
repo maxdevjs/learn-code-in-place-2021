@@ -1,4 +1,4 @@
-# Lesson 1 Welcome to Karel April 19th
+# Lesson 1: Welcome to Karel April 19th
 
 <details open>
 <summary>Learning Goals</summary>

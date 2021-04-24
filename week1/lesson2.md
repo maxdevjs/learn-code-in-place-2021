@@ -1,4 +1,4 @@
-# Lesson 2 Control Flow April 21st
+# Lesson 2: Control Flow April 21st
 
 <details open>
 <summary>Learning Goals</summary>
@@ -1025,7 +1025,7 @@ Speed: 0.75
 
 ## Optional Worked Examples
 
-- [ ] [Control Flow Examples](https://edstem.org/us/courses/10000/lessons/12449/slides/60969)
+- [x] [Control Flow Examples](https://edstem.org/us/courses/10000/lessons/12449/slides/60969)
 
 
  ## Optonal Related Reading
