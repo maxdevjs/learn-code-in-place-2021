@@ -650,6 +650,95 @@ Test failed!
 
 NOTE: will come back to this later!
 
+And what about this mind 💥 solution from `Sahaj Singh`.
+
+He used geometry to do the following:
+
+<img src="imgs/q7-SahajSingh-solution.png" />
+<details>
+<summary>Sahaj Singh solution code</summary>
+
+`ExtensionKarel.py`
+```python
+from karel.stanfordkarel import *
+
+"""
+File: Midpoint.py
+------------------------
+Place a beeper on the middle of the first row.
+"""
+
+def main():
+    midpoint_of_square()
+
+"""
+Midpoint finder --
+First use the diagonal to find the edge of the square (or assumed square)
+Then of that edge, Make a downward slope of 1/2, which will find the midpoint of the base of square.
+"""
+
+def midpoint_of_square():
+    face_east()
+    # Finds the edge of the assumed square
+    diagonal_of_square()
+    # Finds the midpoint
+    half_slope_stairs()
+
+# Downward stairs: brings Karel down from the edge of the square.
+# This is adjusted to work for both odd and even sqaures.
+
+def half_slope_stairs():
+    while no_beepers_present():
+        face_south()
+        if front_is_clear(): # This if else command is for the odd command to not break when it finds the south wall.
+            move()
+            if front_is_clear(): # This is the actual stairs function
+                move()
+                face_west() # Second "if-else command" is for the loop to not break in even world (after encountaring the south wall)
+                move()
+            else:
+                put_beeper()# This "else command" supposed to work
+                face_west() # in even square case
+        else:
+            put_beeper() # This else command supposed to work in odd case.
+                         # and it also breaks this while loop
+        half_slope_stairs() # This is a call back to the command
+
+"""
+Diagonal of square
+This makes Karel run across diagonal, to find
+a square if the world isn't exactly square.
+"""
+
+def diagonal_of_square():
+    while front_is_clear():
+        move()
+        face_north()
+        move()
+        face_east()
+        diagonal_of_square()
+
+# Directions
+
+def face_north():
+    while not_facing_north():
+        turn_left()
+
+def face_west():
+    while not_facing_west():
+        turn_left()
+
+def face_east():
+    while not_facing_east():
+        turn_left()
+
+def face_south():
+    while not_facing_south():
+        turn_left()
+```
+
+</details>
+
 </details>
 <details>
 <summary>Midpoint Files</summary>
