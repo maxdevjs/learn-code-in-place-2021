@@ -1,5 +1,19 @@
+# Lesson
 
-<hr />
+<details open>
+<summary>Learning Goals</summary>
+<br />
+...
+</details>
+
+ ## Videos
+
+- [ ] ...
+- [ ] ...
+- [ ] ...
+
+## Assignments Problems
+
 <details>
 <summary></summary>
 <details open>
@@ -25,3 +39,13 @@
 
 </details>
 </details>
+<hr />
+
+## Optional Worked Examples
+
+- [ ] []()
+
+ ## Optonal Related Reading
+
+- [ ] [ ]()
+- [ ] [ ]()
