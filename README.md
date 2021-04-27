@@ -9,9 +9,14 @@ This is the repository for my journey through
 ### Weeks
 
 #### Week 1
+
 - [x] [Lesson 1: Welcome to Karel April 19th](week1/lesson1.md)
 - [x] [Lesson 2: Control Flow April 21st](week1/lesson2.md)
-- [ ] [Lesson 3: Decomposition April 23st](week1/lesson3.md)
+- [x] [Lesson 3: Decomposition April 23st](week1/lesson3.md)
+
+#### Week 2
+
+- [ ] [Lesson 4: Introduction to Python April 26th](week2/lesson1.md)
 
 ### Resources
 
