@@ -27,7 +27,9 @@ if __name__ == '__main__':
 </details>
 
 - [x] Hello, World
-- [ ] Add Two Numbers 😱
+- [x] Add Two Numbers 😱 this is a `REAL` lesson, `57:05` minutes
+
+Pythons types: `int` (integer value), `float` (real number), `string` (text characters), `bool` (logical values, `True` and `False`).
 
 ## Assignments Problems
 
@@ -65,7 +67,7 @@ if __name__ == '__main__':
  ## Optonal Related Reading
 
 - [ ] [Lecture Slides](https://codeinplace2020.github.io/faqs/4-IntroPython.pdf)
-- [ ] [Interpreter](https://codeinplace2021.github.io/pythonreader/en/interpreter/)
-- [ ] [Variables](https://codeinplace2021.github.io/pythonreader/en/variables/)
-- [ ] [Print](https://codeinplace2021.github.io/pythonreader/en/print/)
-- [ ] [Input](https://codeinplace2021.github.io/pythonreader/en/input/)
+- [x] [Interpreter](https://codeinplace2021.github.io/pythonreader/en/interpreter/)
+- [x] [Variables](https://codeinplace2021.github.io/pythonreader/en/variables/)
+- [x] [Print](https://codeinplace2021.github.io/pythonreader/en/print/)
+- [x] [Input](https://codeinplace2021.github.io/pythonreader/en/input/)

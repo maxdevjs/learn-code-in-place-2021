@@ -16,7 +16,7 @@ This is the repository for my journey through
 
 #### Week 2
 
-- [ ] [Lesson 4: Introduction to Python April 26th](week2/lesson1.md)
+- [ ] [Lesson 4: Introduction to Python April 26th](week2/lesson4.md)
 
 ### Resources
 
