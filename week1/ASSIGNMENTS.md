@@ -514,6 +514,85 @@ BeeperBag: INFINITY
 
 </details>
 
+<hr />
+<details>
+<summary></summary>
+<details open>
+<summary>Description</summary>
+Super simple and amazing solution from <a href="https://edstem.org/us/courses/10000/discussion/402263">William G</a>
+<br />
+<img width="600px" src="" />
+<br />
+
+</details>
+<details>
+<summary>Code</summary>
+
+`Midpoint.py`
+```python
+from karel.stanfordkarel import *
+
+"""
+File: Midpoint.py
+------------------------
+Place a beeper on the middle of the first row.
+"""
+
+def main():
+    """
+    A Miracle on Ice. I use a diagonal angle to cross the grid,
+    and a twice as steep angle to return to the bottom row plus 1 move,
+    and somehow it works!
+    """
+    slope_1()
+    slope_2()
+    find_midpoint()
+
+
+def find_midpoint():
+        turn_right()
+        if front_is_clear():
+            move()
+        put_beeper()
+
+def slope_1():
+    while front_is_clear():
+        turn_left()
+        move()
+        turn_right()
+        move()
+
+def slope_2():
+    turn_around()
+    while front_is_clear():
+        turn_left()
+        move_2()
+        if front_is_clear():
+            turn_right()
+            move()
+
+def turn_around():
+    for i in range(2):
+        turn_left()
+
+def move_2():
+    for i in range(2):
+        if front_is_clear():
+            move()
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+```
+
+``
+```yaml
+
+```
+
+</details>
+</details>
+
 </details>
 </details>
 
