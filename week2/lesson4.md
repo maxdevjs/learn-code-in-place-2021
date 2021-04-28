@@ -62,7 +62,7 @@ Pythons types: `int` (integer value), `float` (real number), `string` (text char
 
 ## Optional Worked Examples
 
-- [ ] [add2numbers]()
+- [x] add2numbers
 
  ## Optonal Related Reading
 
