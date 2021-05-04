@@ -245,40 +245,6 @@ if __name__ == '__main__':
 </details>
 <hr />
 
-<details>
-<summary>Q8 (optional): Ancient Game of Nimm</summary>
-<details open>
-<summary>Description</summary>
-
-</details>
-<details>
-<summary>Code</summary>
-
-`.py`
-```python
-
-```
-</details>
-</details>
-<hr />
-
-<details>
-<summary>(optional) Extension </summary>
-<details open>
-<summary>Description</summary>
-
-</details>
-<details>
-<summary>Code</summary>
-
-`.py`
-```python
-
-```
-</details>
-</details>
-<hr />
-
 ## Section problems
 
 <details>
@@ -1097,7 +1063,7 @@ if __name__ == "__main__":
 <hr />
 
 <details>
-<summary>First person Karel</summary>
+<summary>First person Karel TODO</summary>
 <details open>
 <summary>Description</summary>
 
@@ -1117,6 +1083,6 @@ if __name__ == "__main__":
 
 - [ ] [Lecture Slides](https://codeinplace2020.github.io/faqs/6-ControlFlowRevisited.pdf)
 - [x] [If](https://codeinplace2021.github.io/pythonreader/en/if/)
-- [ ] [While](https://codeinplace2021.github.io/pythonreader/en/while/)
-- [ ] [Booleans](https://codeinplace2021.github.io/pythonreader/en/booleans/)
-- [ ] [For](https://codeinplace2021.github.io/pythonreader/en/for/)
+- [x] [While](https://codeinplace2021.github.io/pythonreader/en/while/)
+- [x] [Booleans](https://codeinplace2021.github.io/pythonreader/en/booleans/)
+- [x] [For](https://codeinplace2021.github.io/pythonreader/en/for/)

@@ -8,9 +8,9 @@
 
  ## Videos
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [] ...
+- [] ...
+- [] ...
 
 ## Assignments Problems
 
@@ -47,5 +47,5 @@
 
  ## Optonal Related Reading
 
-- [ ] [ ]()
-- [ ] [ ]()
+- [ ] []()
+- [ ] []()
