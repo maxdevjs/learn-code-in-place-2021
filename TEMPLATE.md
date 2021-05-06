@@ -8,9 +8,7 @@
 
  ## Videos
 
-- [] ...
-- [] ...
-- [] ...
+- [ ]
 
 ## Assignments Problems
 
