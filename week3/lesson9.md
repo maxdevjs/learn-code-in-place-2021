@@ -164,19 +164,119 @@ if __name__ == '__main__':
 ```
 </details>
 
-- [ ] Mirror
+- [x] Mirror
 
 <details>
 <summary>Code</summary>
 
-`.py`
+`mirror.py`
 ```python
+"""
+File: mirror.py
+---------------
+This program shows an example of creating an image
+that shows an original image and its mirror reflection
+in a new image.
+"""
 
+from simpleimage import SimpleImage
+
+
+def mirror_image(filename):
+    """
+    Read an image from the file specified by filename.
+    Returns a new images that includes the original image
+    and its mirror reflection.
+    Returns the resulting "redscreened" image.
+    """
+    image = SimpleImage(filename)
+    width = image.width
+    height = image.height
+
+    # Create new image to contain mirror reflection
+    mirror = SimpleImage.blank(width * 2, height)
+
+    for y in range(height):
+        for x in range(width):
+            pixel = image.get_pixel(x, y)
+            mirror.set_pixel(x, y, pixel)
+            mirror.set_pixel((width * 2) - (x + 1), y, pixel)
+    return mirror
+
+
+def main():
+    """
+    Run your desired image manipulation functions here.
+    You should store the return value (image) and then
+    call .show() to visualize the output of your program.
+    """
+    original = SimpleImage('burrito.jpg')
+    original.show()
+
+    mirrored = mirror_image('burrito.jpg')
+    mirrored.show()
+
+
+if __name__ == '__main__':
+    main()
 ```
 </details>
 
-- [ ] Wrapup
-- [ ] Responsibility
+Variants:
+
+<details>
+<summary>mirror.py</summary>
+
+`mirror.py`
+```python
+from simpleimage import SimpleImage
+import random
+
+
+def mirror_image(filename):
+    """
+    Read an image from the file specified by filename.
+    Returns a new images that includes the original image
+    and its mirror reflection.
+    Returns the resulting "redscreened" image.
+    """
+    image = SimpleImage(filename)
+    width = image.width
+    height = image.height
+
+    # Create new image to contain mirror reflection
+    mirror = SimpleImage.blank(width * 2, height)
+
+    for y in range(height):
+        for x in range(width):
+            pixel = image.get_pixel(x, y)
+            mirror.set_pixel(x, y, pixel)
+            pixel.red = random.randint(pixel.red // (x + 1), pixel.red)
+            pixel.green = random.randint(pixel.green // 2, pixel.green * 3)
+            pixel.blue = random.randint(pixel.blue // 2, pixel.blue)
+            # mirror.set_pixel((width * 2) - (x + 100), y, pixel)
+            if x % 2 == 0:
+                pixel.red = 0
+                pixel.green = 0
+                pixel.blue = 0
+                mirror.set_pixel((width * 2) -
+                    (x + random.randint(100, height)), y, pixel)
+            else:
+                # mirror.set_pixel((width * 2) -
+                    # (x + random.randint(100, height)), y, pixel)
+                mirror.set_pixel((width * 2) - (x + 1), y, pixel)
+
+            # Original
+            # pixel.blue = pixel.red // 2
+            # pixel.blue = pixel.green // 2
+            # pixel.blue = pixel.blue // 2
+            # mirror.set_pixel((width * 2) - (x + 1), y, pixel)
+    return mirror
+```
+</details>
+
+- [x] Wrapup
+- [x] Responsibility
 
 ## Assignments Problems
 
@@ -209,9 +309,9 @@ if __name__ == '__main__':
 
 ## Optional Worked Examples
 
-- [ ] []()
+- [x]
 
  ## Optonal Related Reading
 
 - [ ] [Lecture Slides](https://codeinplace2020.github.io/faqs/9-Images.pdf)
-- [ ] [Images](https://codeinplace2021.github.io/pythonreader/en/images/)
+- [x] [Images](https://codeinplace2021.github.io/pythonreader/en/images/)
