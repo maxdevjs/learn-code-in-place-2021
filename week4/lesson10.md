@@ -548,11 +548,15 @@ def find_karel(roster):
     Karel is here!
     """
     # delete the pass statement below and write your code here!
-    flag = False
-    for item in roster:
-        if item == 'karel':
-            flag = True
-    if flag:
+    # flag = False
+    # for item in roster:
+    #     if item == 'karel':
+    #         flag = True
+    # if flag:
+    #     print("Karel is here!")
+    # else:
+    #     print("Karel isn't here.")
+    if 'karel' in roster:
         print("Karel is here!")
     else:
         print("Karel isn't here.")
