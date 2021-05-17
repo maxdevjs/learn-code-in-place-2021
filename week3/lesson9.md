@@ -1036,6 +1036,159 @@ if __name__ == '__main__':
 </details>
 <hr />
 
+## Section 4: Images and Functions
+
+<details>
+<summary>Image Filter</summary>
+
+`section_filter.py`
+```python
+"""
+This program loads an image and applies the narok filter
+to it by setting "bright" pixels to grayscale values.
+"""
+
+from simpleimage import SimpleImage
+
+BRIGHTNESS_THRESHOLD = 153
+
+
+def main():
+    image = SimpleImage('images/simba-sq.jpg')
+
+    # Apply the filter
+    # TODO: your code here
+    for pixel in image:
+        pixel_avg = get_pixel_average(pixel)
+        if pixel_avg > BRIGHTNESS_THRESHOLD:
+            # set to grayscale
+            pixel.red = 255
+            pixel.blue = 255
+            pixel.green = 255
+        else:
+            # set to grayscale
+            pixel.red = 0
+            pixel.blue = 0
+            pixel.green = 0
+
+    image.show()
+
+
+def get_pixel_average(pixel):
+    return (pixel.red + pixel.green + pixel.blue) // 3
+
+
+if __name__ == '__main__':
+    main()
+```
+</details>
+<hr />
+
+<details>
+<summary>(Option) Trim Crop</summary>
+
+`trim_crop.py`
+```python
+from simpleimage import SimpleImage
+
+
+def main():
+    image = SimpleImage('images/karel.png')
+    trimmed_img = trim_crop_image(image, 30)
+    trimmed_img.show()
+
+
+def trim_crop_image(original_img, trim_size):
+    """
+    This function returns a new SimpleImage which is a trimmed and
+    cropped version of the original image by shaving trim_sz pixels
+    from each side (top, left, bottom, right) of the image. You may
+    assume trim_sz is less than half the width of the image.
+
+    Inputs:
+        - original_img: The original image to process
+        - trim_size: The number of pixels to shave from each side
+                   of the original image
+
+    Returns:
+        A new SimpleImage with trim_sz pixels shaved off each
+        side of the original image
+    """
+    # TODO: your code here
+    width = original_img.width - 2 * trim_size
+    height = original_img.height - 2 * trim_size
+    cropped_image = SimpleImage.blank(width, height)
+
+    for x in range(width):
+        for y in range(height):
+            pixel = original_img.get_pixel(x + trim_size, y + trim_size)
+            cropped_image.set_pixel(x, y, pixel)
+    return cropped_image
+
+
+if __name__ == '__main__':
+    main()
+```
+</details>
+<hr />
+
+<details>
+<summary>(Option) Add Border</summary>
+
+`add_border.py`
+```python
+from simpleimage import SimpleImage
+
+
+def main():
+    image = SimpleImage('images/simba-sq.jpg')
+    bordered_img = add_border(image, 10)
+    bordered_img.show()
+
+
+def add_border(original_img, border_size):
+    """
+    This function returns a new SimpleImage which is the same as
+    original image except with a black border added around it. The
+    border should be border_size many pixels thick.
+
+    Inputs:
+        - original_img: The original image to process
+        - border_size: The thickness of the border to add around the image
+
+    Returns:
+        A new SimpleImage with the border added around original image
+    """
+    # TODO: your code here
+    width = original_img.width + 2 * border_size
+    height = original_img.height + 2 * border_size
+    bordered = SimpleImage.blank(width, height)
+
+    # image must be wider
+    for x in range(width):
+        for y in range(height):
+            # 🤔
+            if x < border_size or width - border_size <= x or y < border_size or height - border_size <= y:
+                pixel = bordered.get_pixel(x, y)
+                pixel.red = 0
+                pixel.green = 0
+                pixel.blue = 0
+            # if 0 < y < border_size or height - border_size < y < height:
+            else:
+                orig_x = x - border_size
+                orig_y = y - border_size
+                orig_pixel = original_img.get_pixel(orig_x, orig_y)
+                bordered.set_pixel(x, y, orig_pixel)
+
+    return bordered
+
+
+if __name__ == '__main__':
+    main()
+```
+</details>
+<hr />
+
 ## Optional Worked Examples
 
 - [x]
