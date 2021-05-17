@@ -921,37 +921,94 @@ if __name__ == '__main__':
 ```
 </details>
 </details>
-<hr />
 
+<hr />
 <details>
-<summary></summary>
+<summary>Q5 (optional): Extensions</summary>
 <details open>
 <summary>Description</summary>
+The joy of programming is often making something that you is your own. Create any image algorithms you like.
 
+`Problem written by you!`
 </details>
 <details>
-<details>
-<summary></summary>
-<details open>
-<summary>Description</summary>
+<summary>magnify.py</summary>
 
-</details>
-<details>
-<summary>Code</summary>
-
-``
+`magnify.py`
 ```python
+"""
+This program takes an image and generates a reflection.
+The top half of the generated image is the same as the original.
+The bottom half is the mirror reflection of the top half.
+"""
 
-```
-</details>
-</details>
-<hr />
+from simpleimage import SimpleImage
 
-<summary>Code</summary>
+DEFAULT_FILE = 'simba.png'
 
-``
-```python
 
+def magnifier(filename, ratio):
+    image = SimpleImage(filename)
+    width = image.width
+    height = image.height
+    magnified = SimpleImage.blank(width * ratio, height * ratio)
+
+    # magnify_double_pixel(width, height, 2, image, magnified)
+    magnify_pixel(width, height, ratio, image, magnified)
+
+    return magnified
+
+
+def magnify_pixel(width, height, ratio, image, magnified):
+    for x in range(width):
+        for y in range(height):
+            pixel = image.get_pixel(x, y)
+            for i in range(ratio):
+                for j in range(ratio):
+                    magnified.set_pixel(x * ratio + i, y * ratio + j, pixel)
+
+
+# def magnify_double_pixel(width, height, ratio, image, magnified):
+#     for x in range(width):
+#         for y in range(height):
+#             pixel = image.get_pixel(x, y)
+#             for i in range(ratio):
+#                 magnified.set_pixel(x * ratio, y * ratio, pixel)
+#                 magnified.set_pixel(x * ratio + i, y * ratio, pixel)
+#                 magnified.set_pixel(x * ratio, y * ratio + i, pixel)
+#                 magnified.set_pixel(x * ratio + i, y * ratio + i, pixel)
+#                 magnified.set_pixel(x * ratio, y * ratio, pixel)
+
+
+def main():
+    # Get file name from user input
+    filename = get_file()
+
+    # Show the original image
+    original = SimpleImage(filename)
+    original.show()
+
+    # Show the reflected image
+    reflected = magnifier(filename, 4)
+    """
+    Current minimum ratio is 1.
+    Decreasing (float values) are not allowed
+    reflected = magnifier(filename, 0.5)
+    """
+
+    reflected.show()
+
+
+def get_file():
+    # Read image file path from user, or use the default file
+    filename = input('Enter image file (or press enter for default): ')
+    if filename == '':
+        filename = DEFAULT_FILE
+    return filename
+
+
+if __name__ == '__main__':
+    main()
 ```
 </details>
 </details>
