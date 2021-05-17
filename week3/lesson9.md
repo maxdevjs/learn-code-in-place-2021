@@ -944,6 +944,7 @@ based on a ratio chosen by the user.
 from simpleimage import SimpleImage
 
 DEFAULT_FILE = 'simba.png'
+RATIO = 2
 
 
 def magnifier(filename, ratio):
@@ -1022,10 +1023,10 @@ def get_file():
 
 def get_ratio():
     # Read magnifier ratio from user, or use the default one
-    ratio = int(input('Enter a ratio (integer or press enter for default): '))
+    ratio = input('Enter a ratio (integer or press enter for default): ')
     if ratio == '':
-        ratio = 2
-    return ratio
+        ratio = RATIO
+    return int(ratio)
 
 
 if __name__ == '__main__':
