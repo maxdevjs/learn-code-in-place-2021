@@ -937,9 +937,8 @@ The joy of programming is often making something that you is your own. Create an
 `magnify.py`
 ```python
 """
-This program takes an image and generates a reflection.
-The top half of the generated image is the same as the original.
-The bottom half is the mirror reflection of the top half.
+This program takes an image and magnifies it
+based on a ratio chosen by the user.
 """
 
 from simpleimage import SimpleImage
@@ -948,6 +947,9 @@ DEFAULT_FILE = 'simba.png'
 
 
 def magnifier(filename, ratio):
+    """
+    this would be good food for a class
+    """
     image = SimpleImage(filename)
     width = image.width
     height = image.height
@@ -981,18 +983,29 @@ def magnify_pixel(width, height, ratio, image, magnified):
 
 
 def main():
-    # Get file name from user input
-    filename = get_file()
+    """
+    super uber description
 
-    # Show the original image
+    TODO: check examples for arguments, etc
+    """
+    # Gets file name from user input
+    filename = get_file()
+    # Gets magnifier ratio from user input
+    ratio = get_ratio()
+
+    # Shows the original image
     original = SimpleImage(filename)
     original.show()
 
-    # Show the reflected image
-    reflected = magnifier(filename, 4)
+    # Shows the magnified image
+    # ratio could be a command line argument
+    reflected = magnifier(filename, ratio)
     """
     Current minimum ratio is 1.
-    Decreasing (float values) are not allowed
+    Decreasing (float values) are not allowed.
+
+    This does not work:
+
     reflected = magnifier(filename, 0.5)
     """
 
@@ -1005,6 +1018,14 @@ def get_file():
     if filename == '':
         filename = DEFAULT_FILE
     return filename
+
+
+def get_ratio():
+    # Read magnifier ratio from user, or use the default one
+    ratio = int(input('Enter a ratio (integer or press enter for default): '))
+    if ratio == '':
+        ratio = 2
+    return ratio
 
 
 if __name__ == '__main__':
