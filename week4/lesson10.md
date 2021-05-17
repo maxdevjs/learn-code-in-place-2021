@@ -593,7 +593,248 @@ Test passed.
 ```
 </details>
 
- ## Optonal Related Reading
+## Section 3: Variable Mechanics
+
+<details>
+<summary>running.py TODO: go back to refactor it</summary>
+
+`running.py`
+```python
+"""
+Prompts the user to enter numbers and prints
+the running total until the user enters 0.
+"""
+
+
+def main():
+    # Fill this function out!
+    running_total()
+
+
+def running_total():
+    running_total = 0
+    minimum = 0
+    maximum = 0
+
+    # how to avoid this first case, forces a lot of duplication
+    # and ...
+    value = int(input("Enter a value: "))
+    return_tuple = values_logic(value, running_total, minimum, maximum)
+
+    running_total = return_tuple[0]
+    minimum = return_tuple[2]  # ugly
+    maximum = return_tuple[2]
+    # end first case
+
+    print_output(running_total, minimum, maximum)
+
+    while True:
+        value = int(input("Enter a value: "))
+        if value == 0:
+            break
+        # else:
+        return_tuple = values_logic(value, running_total, minimum, maximum)
+        running_total = return_tuple[0]
+        minimum = return_tuple[1]
+        maximum = return_tuple[2]
+        print_output(running_total, minimum, maximum)
+        # this introduces a bug (prints 36 instead of 39) (?)
+        # print_output(return_tuple[0], return_tuple[1], return_tuple[2])
+
+
+def values_logic(value, running_total, minimum, maximum):
+    running_total += value
+    if minimum > value:
+        minimum = value
+    elif maximum < value:
+        maximum = value
+    # print_output(running_total, minimum, maximum)
+
+    return running_total, minimum, maximum
+
+
+def print_output(running_total, minimum, maximum):
+    print(f"Running total is {running_total}")
+    print(f"Maximum so far is {maximum}")
+    print(f"Minimum so far is {minimum}\n")
+
+
+if __name__ == '__main__':
+    main()
+```
+
+This is the section solution:
+
+`running.py`
+```python
+"""
+Prompts the user to enter numbers and prints
+the running total until the user enters 0.
+"""
+
+# we talked about a couple of different strategies here
+STARTING_MIN = float('inf')
+STARTING_MAX = float('-inf')
+
+
+def main():
+    # Fill this function out!
+    running_total = 0
+
+    min = STARTING_MIN     # this has to be highest possible number
+    max = STARTING_MAX     # this has to be lowest possible
+
+    # loop
+    while True:
+        # input a number, and store it
+        number = int(input("Please Enter a Number: "))
+
+        if (number > max):
+            max = number
+        if (number < min):
+            min = number
+
+        # add input to running total
+        running_total = running_total + number
+
+        print("Total is " + str(running_total))
+        print("Max is", max)
+        print("Min is", min)
+        print("")
+
+
+if __name__ == '__main__':
+    main()
+```
+</details>
+
+<details>
+<summary>fizzbuzz.py</summary>
+
+`fizzbuzz.py`
+```python
+"""
+Prints the Fizz Buzz sequence up to a given number.
+"""
+
+
+def main():
+    # Fill me out!
+    # number = input_number_to_count_to()
+    # fbz_tuple = fizz_buzz_fizzbuzz(number)
+    # print_fbz(fbz_tuple)
+    print_fbz(fizz_buzz_fizzbuzzed(input_number_to_count_to()))
+
+
+def input_number_to_count_to():
+    return int(input("Number to count to: "))
+
+
+def fizz_buzz_fizzbuzzed(number):
+    fizzed = 0
+    buzzed = 0
+    fizzbuzzed = 0
+
+    for i in range(1, number + 1):
+        # if ((i % 3 == 0) and (i % 5 == 0)):
+        if (i % 15 == 0):
+            print_fizz_buzz_fizzbuzz("Fizzbuzz")
+            fizzbuzzed += 1
+        elif i % 3 == 0:
+            print_fizz_buzz_fizzbuzz("Fizz")
+            fizzed += 1
+        elif i % 5 == 0:
+            print_fizz_buzz_fizzbuzz("Buzz")
+            buzzed += 1
+        else:
+            print_fizz_buzz_fizzbuzz(i)
+    return fizzed, buzzed, fizzbuzzed
+
+
+def print_fizz_buzz_fizzbuzz(string):
+    print(string)
+
+
+def print_fbz(fbz):
+    print(f"\nNum fizzed: {fbz[0]}\nNum buzzed: {fbz[1]}\nNum fizzbuzzed: {fbz[2]}")
+
+
+if __name__ == '__main__':
+    main()
+```
+
+This is the section solution:
+
+`fizzbuzz.py`
+```python
+"""
+Prints the Fizz Buzz sequence up to a given number.
+"""
+
+
+def main():
+    # Fill this function out!
+    # input the number
+    num = int(input("Enter a number: "))
+
+    # init
+    num_fizz = 0
+    num_buzz = 0
+    num_fizzbuzz = 0
+
+    # count the numbers
+    for i in range(1, num + 1):
+        result = get_fizzbuzz(i)
+        print(result)
+
+    # print("Num fizzbuzz:", num_fizzbuzz)
+    # print("Num fizz:", num_fizz)
+    # print("Num buzz:", num_buzz)
+
+
+def get_fizzbuzz(number):
+    '''
+    Take in the current counter number
+    Return Either "Fizz" "Buzz" "FizzBuzz" or the number
+
+    >>> get_fizzbuzz(3)
+    'Fizz'
+    >>> get_fizzbuzz(10)
+    'Buzz'
+    >>> get_fizzbuzz(15)
+    'FizzBuzz'
+    >>> get_fizzbuzz(8)
+    8
+
+    '''
+    if (number % 15 == 0):
+        return('FizzBuzz')
+
+    elif (number % 3 == 0):
+        return('Fizz')
+
+    elif (number % 5 == 0):
+        return('Buzz')
+
+    else:
+        return(number)
+
+
+if __name__ == '__main__':
+    main()
+```
+</details>
+
+<details>
+<summary></summary>
+
+`.py`
+```python
+
+```
+</details>
+
+## Optonal Related Reading
 
 - [ ] [Lecture Slides](https://codeinplace2020.github.io/faqs/10-Lists.pdf)
 - [x] [Lists](https://codeinplace2021.github.io/pythonreader/en/lists/)
